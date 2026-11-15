@@ -4,7 +4,7 @@
 
 set -euo pipefail
 
-CITY="${WAYBAR_WEATHER_CITY:-London}"
+CITY="${WAYBAR_WEATHER_CITY:-Kolkata}"
 CACHE=/tmp/waybar-weather.json
 TTL=1800
 

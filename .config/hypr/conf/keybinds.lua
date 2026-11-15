@@ -123,9 +123,9 @@ hl.bind(mainMod .. " + ESCAPE", hl.dsp.exec_cmd(
 hl.bind("CTRL + ESCAPE", hl.dsp.exec_cmd("sh -c 'killall waybar || waybar'"))
 
 -- Screenshots
-hl.bind(            "Print",              hl.dsp.exec_cmd("grimblast --notify copysave screen"))
-hl.bind(mainMod .. " + Print",           hl.dsp.exec_cmd("grimblast --notify copysave active"))
-hl.bind(mainMod .. " + ALT + Print",     hl.dsp.exec_cmd("grimblast --notify copysave area"))
+hl.bind("Print", hl.dsp.exec_cmd("grimblast --notify copysave screen \"$HOME/Pictures/Screenshots/$(date +%Y%m%d_%H%M%S).png\""))
+hl.bind(mainMod .. " + Print", hl.dsp.exec_cmd("grimblast --notify copysave active \"$HOME/Pictures/Screenshots/$(date +%Y%m%d_%H%M%S).png\""))
+hl.bind(mainMod .. " + ALT + Print", hl.dsp.exec_cmd("grimblast --notify copysave area \"$HOME/Pictures/Screenshots/$(date +%Y%m%d_%H%M%S).png\""))
 hl.bind(mainMod .. " + SHIFT + Print",   hl.dsp.exec_cmd(
     "sh -c 'grimblast save area /tmp/swappy-screenshot.png && swappy -f /tmp/swappy-screenshot.png'"
 ))

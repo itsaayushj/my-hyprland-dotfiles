@@ -1,15 +1,17 @@
 -- hyprland/hyprland.lua
 -- Refer to the wiki: https://wiki.hypr.land/Configuring/Start/
-
+hl.config({
+    debug = {
+        disable_scale_checks = true
+    }
+})
 --------------------
 ---- MONITORS ----
 --------------------
 
-hl.monitor({ output = "eDP-1", mode = "preferred", position = "auto",       scale = 1.25 })
+hl.monitor({ output = "eDP-1", mode = "preferred", position = "auto",       scale = 1 })
 hl.monitor({ output = "DP-1",  mode = "preferred", position = "auto-right", scale = 1    })
-hl.monitor({ output = "",      mode = "preferred", position = "auto",       scale = "auto" })
-
-
+hl.monitor({ output = "",      mode = "preferred", position = "auto",       scale = 0.9 })
 ----------------------
 ---- MY PROGRAMS ----
 ----------------------
@@ -38,7 +40,17 @@ hl.env("MOZ_ENABLE_WAYLAND", "1")
 hl.env("LIBVA_DRIVER_NAME",            "nvidia")
 hl.env("XDG_SESSION_TYPE",             "wayland")
 hl.env("GBM_BACKEND",                  "nvidia-drm")
-hl.env("__GLX_VENDOR_LIBRARY_NAME",    "nvidia")
+
+
+-----------------
+---- MODULES ----
+-----------------
+
+require("conf.autostart")
+require("conf.appearance")
+require("conf.input")
+require("conf.keybinds")
+require("conf.windowrules")hl.env("__GLX_VENDOR_LIBRARY_NAME",    "nvidia")
 hl.env("NVD_BACKEND",                  "direct")
 hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
 
